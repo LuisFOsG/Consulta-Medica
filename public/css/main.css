@@ -1,0 +1,114 @@
+#archivo{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+#divArchivo{
+    position: relative;
+    margin: 0px;
+    width: 150px;
+    background-color: #2499e3;
+    border-radius: 5px;
+    box-shadow:0px 3px 0px #1a71a9;
+}
+
+#textArchivo{
+    text-align: center;
+    color: rgba(242, 242, 242, 0.795);
+}
+
+.titulo{
+    font-family: 'Lora', serif;
+}
+
+.parrafo{
+    font-family: 'Comfortaa', cursive;
+}
+
+.fuenteArchivo{
+    font-family: 'Source Code Pro', monospace;
+}
+
+.redondear{
+    border-radius:1rem;
+}
+
+/* Fonts para el Login */
+
+.titulologin{
+    font-family: 'Staatliches', cursive;
+}
+
+.textlogin{
+    font-family: 'Oswald', sans-serif;
+}
+
+
+/* SASS COMPILER para sintomas ======================================================================== */
+
+.live {
+    overflow: hidden;
+}
+  
+.live > li {
+    list-style: none;
+    position: relative;
+    padding: 0 0 0 2em;
+    margin: 0 0 .5em 10px;
+    -webkit-transition: .12s;
+    transition: .12s;
+}
+  
+.live > li::before {
+    position: absolute;
+    content: '\2022';
+    font-family: Arial;
+    color: rgba(76, 74, 192, 0.795);
+    top: 0;
+    left: 0;
+    text-align: center;
+    font-size: 2em;
+    opacity: .5;
+    line-height: .75;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+  
+.live > li:hover {
+    color: rgba(76, 74, 192, 0.795);
+}
+  
+.live > li:hover::before {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+    opacity: 1;
+    text-shadow: 0 0 4px;
+    -webkit-transition: .1s;
+    transition: .1s;
+}
+  
+.live > li::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: rgba(76, 74, 192, 0.795);
+    border-radius: 3px;
+    line-height: 0;
+    top: .27em;
+    left: 5px;
+}
+
+.live > li:hover::before {
+    -webkit-transform: none;
+            transform: none;
+    border-radius: 5px;
+    width: 25px;
+    left: -10px;
+    background: rgba(95, 11, 145, 0.733);
+}
