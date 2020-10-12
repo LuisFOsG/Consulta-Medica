@@ -38,6 +38,7 @@ include("dbconnection/conexion.php");//Conexión a la Base de Datos
                 </form>
             </div>
         </div>
+        
         <?php
             include("dbconnection/verificationform.php");
         ?>

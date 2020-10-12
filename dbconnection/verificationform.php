@@ -59,7 +59,8 @@
     }
     
     /* Form Grande :v */
-    /* Hacer Validacion ================================================================0 */
+    /* TODO Realizar AJuste de Archivos PDF cambiar a solo el num de Documento */
+    /* TODO Realizar edicion del formulario, de forma en la que se cree una nueva consulta */
 
     if(isset($_POST['Nombres'])){
         $Nombres = $_POST['Nombres'];
