@@ -1,11 +1,28 @@
 <?php
 
     function mostrar($ti, $fechaexp){
+        menuConsulta();
         datosBasicos($ti, $fechaexp);
         datosDireccion($ti, $fechaexp);
         datosConsulta($ti, $fechaexp);
         sintomas($ti, $fechaexp);
         datosDoctor($ti, $fechaexp);
+    }
+
+    function menuConsulta(){
+        echo '<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <strong class="text-info">Consulta Medica</strong>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link titulo" href="#">Editar Consulta</i></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link titulo" href="#">Nueva Consulta</i></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>';
     }
 
     function datosBasicos($ti, $fechaexp){

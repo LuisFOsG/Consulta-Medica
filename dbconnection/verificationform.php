@@ -57,11 +57,9 @@
             mostrar($ti, $fechaexp);
         }
     }
-    
-    /* Form Grande :v */
-    /* TODO Realizar AJuste de Archivos PDF cambiar a solo el num de Documento */
-    /* TODO Realizar edicion del formulario, de forma en la que se cree una nueva consulta */
+    /* TODO Realizar edicion del formulario, de forma en la que se cree una nueva consulta y editar la consulta*/
 
+    /* Form Grande :v */
     if(isset($_POST['Nombres'])){
         $Nombres = $_POST['Nombres'];
         $Apellidos = $_POST['Apellidos'];
@@ -82,7 +80,7 @@
         if($_REQUEST['genero']=="Otro"){
             $Genero = 3;
         }
-    
+
         if($_REQUEST['TipoConsulta']=="CInd"){
             $tipoconsulta = 1;
         }
@@ -92,13 +90,13 @@
         if($_REQUEST['TipoConsulta']=="CDes"){
             $tipoconsulta = 3;
         }
-    
+
         $consulta = "SELECT * FROM tipoespecialista";
         $resultado = mysqli_query($con, $consulta) or die ( "Algo ha salido mal en la consulta a la base de datos");
         while ($valores = mysqli_fetch_array($resultado)) {
             if($_REQUEST['Especialistas']===$valores["nombretipoesp"]){
                 $especialista = $valores["nombretipoesp"];
-                
+
                 $consulta1 = " SELECT tipoespecialista.idtipo FROM tipoespecialista WHERE nombretipoesp = '$especialista'";
                 $resultado1 = mysqli_query($con, $consulta1) or die ( "Algo ha salido mal en la consulta a la base de datos de datos de consulta");
 
@@ -156,7 +154,7 @@
 
             $consulta = "INSERT INTO datosconsultas(descripcion, tipoconsulta, fechaconsulta) VALUES ('$Descripcion','$tipoconsulta','$fechaconsulta')";
             $resultado = mysqli_query($con, $consulta) or die ( "Algo ha salido mal en la consulta a la base de datos de datos de consulta");
-           
+
             /* Se guardan los datos en datosconsultas_sintomas */
 
             $consulta1 = "SELECT datosconsultas.idconsultas FROM datosconsultas WHERE descripcion = '$Descripcion' AND tipoconsulta = '$tipoconsulta'";
@@ -167,13 +165,13 @@
                 /* ==================================Sintomas ====================================== */
                 if($_REQUEST["sintoma"]){
                     $arreglo = $_REQUEST["sintoma"];
-                    
+
                     if($arreglo){
                         $num = count($arreglo);
                         for($n=0; $n<$num; $n++){
                             $consulta2 = "SELECT * FROM sintomas";
                             $resultado2 = mysqli_query($con, $consulta2) or die ( "Algo ha salido mal en la consulta a la base de datos de sintomas");
-                            
+
                             while ($valores2 = mysqli_fetch_array($resultado2)) {
                                 if ($arreglo[$n] === $valores2["nombresintoma"]){
                                     $idSintoma = $valores2["idsintomas"];
@@ -192,7 +190,7 @@
                 echo "No se pudo cargar el archivo";
             }else{
                 $ruta = "public/documentos/";
-                $nombrefinal = $Documentos . $_FILES["Adjuntar"]["name"];
+                $nombrefinal = $Documentos . ".pdf";
                 $upload = $ruta . $nombrefinal;
                 move_uploaded_file($_FILES["Adjuntar"]["tmp_name"], $upload);
             }
