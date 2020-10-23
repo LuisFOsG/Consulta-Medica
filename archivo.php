@@ -26,5 +26,4 @@ include("dbconnection/conexion.php");//Conexión a la Base de Datos
             readfile("public/documentos/".$valores["adjuntar"]);
         }
     }
-
     ?>
