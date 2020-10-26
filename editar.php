@@ -1,3 +1,12 @@
+<!-- TODO
+- Estilo
+- Verificar PDF
+- Guardar datos en BD
+- Arreglar especialistas
+- Guardar como PDF (Opcional)
+- Cambiar el pie de Pagina
+ -->
+
 <?php
     include("dbconnection/conexion.php");//Conexión a la Base de Datos
 
