@@ -1,6 +1,6 @@
-# Consulta Medica
+# Formulario Consulta Medica
 
-![Captura]()
+![Captura](https://github.com/LuisFOsG/Consulta-Medica/blob/master/imgproy/Consulta-Medica.png)
 
 ## Requiere
 * php
