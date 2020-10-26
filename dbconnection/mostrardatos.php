@@ -1,7 +1,7 @@
 <?php
 
     function mostrar($ti, $fechaexp){
-        menuConsulta();
+        menuConsulta($ti, $fechaexp);
         datosBasicos($ti, $fechaexp);
         datosDireccion($ti, $fechaexp);
         datosConsulta($ti, $fechaexp);
@@ -9,20 +9,27 @@
         datosDoctor($ti, $fechaexp);
     }
 
-    function menuConsulta(){
-        echo '<nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <strong class="text-info">Consulta Medica</strong>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link titulo" href="#">Editar Consulta</i></a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link titulo" href="#">Nueva Consulta</i></a>
-                    </li>
-                </ul>
-            </div>
-        </nav>';
+    function menuConsulta($ti, $fechaexp){
+        $con = conectar();
+
+        $consulta = "SELECT usuario.ccusuario, usuario.fechaexpedicion FROM usuario WHERE ccusuario = '$ti' AND fechaexpedicion = '$fechaexp'";
+        $resultado = mysqli_query($con, $consulta) or die ( "Algo ha salido mal en la consulta a la base de datos");
+        while ($valores = mysqli_fetch_array($resultado)) {
+            echo '<nav class="navbar navbar-expand-lg navbar-light bg-light">';
+            echo '<strong class="text-info">Consulta Medica</strong>';
+            echo '<div class="collapse navbar-collapse" id="navbarNavAltMarkup">';
+            echo '<ul class="navbar-nav ml-auto">';
+            echo '<li class="nav-item active">';
+            echo '<form action="./editar.php" method="POST">';
+            echo '<input type="hidden" name="cedr" value="'.$valores["ccusuario"].'">';
+            echo '<input type="hidden" name="venci" value="'.$valores["fechaexpedicion"].'">';
+            echo '<button class="btn btn-danger text-white nav-link titulo" type="submit">Editar <i class="fas fa-pencil-alt"></i></button>';
+            echo '</form>';
+            echo "</li>";
+            echo "</ul>";
+            echo "</div>";
+            echo '</nav>';
+        }
     }
 
     function datosBasicos($ti, $fechaexp){

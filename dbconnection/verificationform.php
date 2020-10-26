@@ -57,7 +57,6 @@
             mostrar($ti, $fechaexp);
         }
     }
-    /* TODO Realizar edicion del formulario, de forma en la que se cree una nueva consulta y editar la consulta*/
 
     /* Form Grande :v */
     if(isset($_POST['Nombres'])){
