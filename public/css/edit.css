@@ -1,0 +1,15 @@
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url("../img/fondoedit.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.88;
+}
+
+.titulo {
+    font-size: 45px;
+    text-align: center;
+}

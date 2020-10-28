@@ -1,5 +1,5 @@
 <?php
-include("dbconnection/conexion.php");//Conexión a la Base de Datos
+include("../../dbconnection/conexion.php");//Conexión a la Base de Datos
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -23,7 +23,7 @@ include("dbconnection/conexion.php");//Conexión a la Base de Datos
             echo "Documento no encontrado";
         }else{
             header("content-type: application/pdf");
-            readfile("public/documentos/".$valores["adjuntar"]);
+            readfile($valores["adjuntar"]);
         }
     }
     ?>

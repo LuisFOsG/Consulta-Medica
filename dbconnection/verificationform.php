@@ -162,7 +162,7 @@
             while ($valores1 = mysqli_fetch_array($resultado1)){
                 $idconsulta = $valores1["idconsultas"];
                 /* ==================================Sintomas ====================================== */
-                if($_REQUEST["sintoma"]){
+                if(isset($_REQUEST["sintoma"])){
                     $arreglo = $_REQUEST["sintoma"];
 
                     if($arreglo){
@@ -182,6 +182,8 @@
                     } else{
                         echo "No ingreso ningun dato";
                     }
+                } else {
+                    echo "No Ingreso Ningun sintoma";
                 }
             }
 

@@ -21,8 +21,8 @@
             echo '<ul class="navbar-nav ml-auto">';
             echo '<li class="nav-item active">';
             echo '<form action="./editar.php" method="POST">';
-            echo '<input type="hidden" name="cedr" value="'.$valores["ccusuario"].'">';
-            echo '<input type="hidden" name="venci" value="'.$valores["fechaexpedicion"].'">';
+            echo '<input type="hidden" name="Documentos" value="'.$valores["ccusuario"].'">';
+            echo '<input type="hidden" name="FechaVencimiento" value="'.$valores["fechaexpedicion"].'">';
             echo '<button class="btn btn-danger text-white nav-link titulo" type="submit">Editar <i class="fas fa-pencil-alt"></i></button>';
             echo '</form>';
             echo "</li>";
@@ -92,7 +92,7 @@
             echo '<td class="text-center">'.$valores["direccion"].'</td>';
             echo '<td class="text-center">'.$valores["telefono"].'</td>';
             echo '<td class="text-center">'.$valores["correo"].'</td>';
-            echo '<td class="text-center"><a href="archivo.php?id='.$valores["ccusuario"].'" target="_blank"><img src="public/img/archivo.png" alt="Archivo" width="30" height="30"></td>';
+            echo '<td class="text-center"><a href="public/documentos/archivo.php?id='.$valores["ccusuario"].'" target="_blank"><img src="public/img/archivo.png" alt="Archivo" width="30" height="30"></td>';
             echo '</tr>';
         }
         echo '</table>';
