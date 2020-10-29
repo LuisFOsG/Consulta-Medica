@@ -1,42 +1,48 @@
-<footer>
-    <div class="bg-primary">
-        <div class="container">
-        <div class="row justify-content-between align-items-center py-3">
-            <div class="col text-center text-md-left order-1 order-md-0 mb-0 my-4 my-md-0">
-                <p class="text-white mb-0"><small>&copy; Todos los Derechos Reservados</small></p>
-            </div>
-            <div class="col order-0 order-md-1">
-                <ul class="nav justify-content-center">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-white">Ubicanos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-white">Nosotros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-white">Contacto</a>
-                    </li>
+<footer class="fondopie p-4">
+    <div class="row mt-5">
+        <div class="col-1"></div>
+        <div class="col-4 justify-content-center">
+            <div class="text-dark">
+                <p class="mb-0"><strong>Lineas de Atención</strong></p>
+                <ul class="live">
+                    Régimen Contributivo
+                    <li class="titulo">En Barrancabermeja <br> (1) 322 9045</li>
+                    <li class="titulo">Línea Gratuita Nacional <br>
+                    01 8000 634974 <br></li>
+                    Régimen Subsidiado
+                    <li class="titulo">Línea Gratuita Nacional <br>
+                    01 8000 983562 <br></li>
                 </ul>
             </div>
-            <div class="col text-center text-md-right order-2">
-                <a href="#" class="text-white mr-1">
-                    <i class="fab fa-facebook"></i>
-                </a>
-                <a href="#" class="text-white mr-1">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="#" class="text-white mr-1">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#" class="text-white mr-1">
-                    <i class="fab fa-youtube"></i>
-                </a>
+        </div>
+        <div class="col-5 justify-content-center">
+            <div class="text-dark">
+                <p class="mb-0"><strong>Oficinas administrativas</strong></p>
+                <ul class="live">
+                    <li class="titulo">Dirección Nacional<br> Carrera 82K No. 38A-22</li>
+                    <li class="titulo">Bogotá D.C., Colombia</li>
+                    <li class="titulo">Teléfono administrativo <br> (1) 532 5055</li>
+                </ul>
             </div>
-            </div>
+        </div>
+        <div class="col-2">
+            <a href="#" class="text-dark mr-1 icon nav-link">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="#" class="text-dark mr-1 icon nav-link">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="text-dark mr-1 icon nav-link">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="text-dark mr-1 icon nav-link">
+                <i class="fab fa-youtube"></i>
+            </a>
         </div>
     </div>
 </footer>
 
+<!-- random -->
 <!-- DEPENDENCIAS -->
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

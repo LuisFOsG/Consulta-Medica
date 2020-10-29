@@ -70,9 +70,6 @@ include("dbconnection/conexion.php");//Conexión a la Base de Datos
             </div>
         </div>
     </div>
-    <?php
-        include("particiones/pie.php");
-    ?>
     <!--===============================================================================================-->
     <script src="vendor/select2/select2.min.js"></script>
     <!--===============================================================================================-->

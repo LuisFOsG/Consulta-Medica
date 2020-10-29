@@ -55,7 +55,7 @@
 .live {
     overflow: hidden;
 }
-  
+
 .live > li {
     list-style: none;
     position: relative;
@@ -64,7 +64,7 @@
     -webkit-transition: .12s;
     transition: .12s;
 }
-  
+
 .live > li::before {
     position: absolute;
     content: '\2022';
@@ -79,11 +79,11 @@
     -webkit-transition: .5s;
     transition: .5s;
 }
-  
+
 .live > li:hover {
     color: rgba(76, 74, 192, 0.795);
 }
-  
+
 .live > li:hover::before {
     -webkit-transform: scale(2);
             transform: scale(2);
@@ -92,7 +92,7 @@
     -webkit-transition: .1s;
     transition: .1s;
 }
-  
+
 .live > li::before {
     content: '';
     width: 10px;
@@ -111,4 +111,14 @@
     width: 25px;
     left: -10px;
     background: rgba(95, 11, 145, 0.733);
+}
+
+/* Pie de la pagina */
+
+.fondopie {
+    background-image: url("../img/imgpie.png");
+}
+
+.icon {
+    font-size: 40px;
 }

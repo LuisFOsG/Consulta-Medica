@@ -41,10 +41,6 @@ include("dbconnection/conexion.php");//Conexión a la Base de Datos
         <?php
             include("dbconnection/verificationform.php");
         ?>
-        <br>
-        <br>
-        <br>
-        <br>
     </div>
     <?php
         include("particiones/pie.php");
