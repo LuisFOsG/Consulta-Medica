@@ -15,7 +15,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="./public/css/mai.css">
+<link rel="stylesheet" href="./public/css/index.css">
 
 <!-- CSS ANIMADO -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">

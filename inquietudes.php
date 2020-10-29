@@ -69,7 +69,6 @@ include("dbconnection/conexion.php");//Conexión a la Base de Datos
     ?>
     <script>
     $('.borrarinq').on("click", function() {
-        console.log("Holaa");
         $tr = $(this).closest("tr");
         var datos = $tr.children("td").map(function() {
             return $(this).text();

@@ -122,3 +122,15 @@
 .icon {
     font-size: 40px;
 }
+
+.navv {
+    width: 100%;
+    height: 80px;
+    font-size: 25px;
+    background: rgb(69,193,210);
+    background: radial-gradient(circle, rgba(69,193,210,0.9237732619382022) 15%, rgba(69,155,210,0.9237732619382022) 35%, rgba(69,110,210,0.9237732619382022) 56%, rgba(12,0,255,0.7692788799157303) 86%);
+}
+
+.navk {
+    font-size: 15px;
+}

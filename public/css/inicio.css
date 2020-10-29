@@ -19,7 +19,6 @@
   -webkit-mask: url(https://i.imgur.com/AYJuRke.png);
   /*-webkit-mask: url(https://veuwer.com/i/3fxb.png);*/
   -webkit-mask-size: 3000% 100%;
-  
   -webkit-animation: mask-playzero 2s steps(29) infinite;
 }
 
@@ -51,7 +50,6 @@ to {
     mask-position: 100% 0;
 }
 }
-  
   @keyframes mask-playzero {
     from {
     -webkit-mask-position: 0 0;

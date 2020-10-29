@@ -1,9 +1,8 @@
 <!-- TODO
 - Guardar datos en BD
+- Sintomas
 - Arreglar especialistas
 - Guardar como PDF (Opcional)
-- Cambiar el pie de Pagina (General)
-- Sintomas
 -->
 
 <?php
@@ -55,7 +54,7 @@
     <link rel="stylesheet" href="public/css/edit.css">
 </head>
 
-<nav class="navbar navbar-dark bg-dark">
+<nav class="navbar navbar-dark bg-dark d-flex justify-content-center">
   <strong><a class="nav-link text-light titulo"><img src="./public/img/ico.png" width="50" alt="logo"> Editar Formulario</a></strong>
 </nav>
 

@@ -11,6 +11,30 @@ include("dbconnection/conexion.php");//Conexión a la Base de Datos
 </head>
 
 <body>
+
+    <div class="modal animate__animated animate__jackInTheBox" id="myModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><strong>Confirmar</strong></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>¿Esta Seguro de Eliminar esta Inquietud?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <form action="inquietudes.php" method="POST">
+                        <input type="hidden" name="eliminar" id="deletee">
+                        <button type="submit" class="btn btn-danger">Si, Estoy seguro</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <?php
         include("particiones/menu.php");
     ?>
@@ -241,6 +265,16 @@ include("dbconnection/conexion.php");//Conexión a la Base de Datos
             </div>
         </div>
     </div>
+    <script>
+        $('form').submit(function(e){
+            if ($('input[type=checkbox]:checked').length === 0) {
+                e.preventDefault();
+                $('#myModal').modal();
+            }else{
+                window.location.assign("formulario.php");
+            }
+        });
+    </script>
     <script src="public/js/verificacion.js"></script>
     <?php
         include("particiones/pie.php");
