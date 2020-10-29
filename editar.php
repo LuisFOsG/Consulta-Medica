@@ -213,8 +213,7 @@
                     <div class="form-group">
                         <label class="col control-label">&nbsp;</label>
                         <div class="col">
-                            <button type="submit" class="btn btn-primary"><i class="fas fa-book"></i> Enviar
-                                Formulario</button>
+                            <button type="submit" class="btn btn-primary"><i class="fas fa-book"></i> Actualizar Consulta</button>
                             <a href="basedatos.php" class="btn btn-danger">Cancelar</a>
                         </div>
                     </div>
