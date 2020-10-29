@@ -262,22 +262,22 @@ include("dbconnection/conexion.php");//Conexión a la Base de Datos
         </div>
     </div>
     <script>
+
         $('form').submit(function(e){
             if ($('input[type=checkbox]:checked').length === 0) {
                 e.preventDefault();
-                holaMundo();
+                $('#ModalAlerta').modal();
             }else{
                 window.location.assign("formulario.php");
             }
         });
 
     </script>
+    <script src="dbconnection/useronready/main.js"></script>
     <script src="public/js/verificacion.js"></script>
     <?php
         include("particiones/pie.php");
     ?>
-    <script src="dbconnection/useronready/jquery.min.js"></script>
-    <script src="dbconnection/useronready/main.js"></script>
 </body>
 
 </html>
