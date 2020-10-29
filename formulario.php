@@ -11,26 +11,6 @@ include("dbconnection/conexion.php");//Conexión a la Base de Datos
 </head>
 
 <body>
-
-    <div class="modal animate__animated animate__jackInTheBox fade" id="ModalAlerta" role="dialog" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title"><strong>Alerta!</strong></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>No Ingreso Ningun Sintoma</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-warning" data-dismiss="modal">Ok, Entiendo</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <?php
         include("particiones/menu.php");
     ?>
@@ -266,7 +246,12 @@ include("dbconnection/conexion.php");//Conexión a la Base de Datos
         $('form').submit(function(e){
             if ($('input[type=checkbox]:checked').length === 0) {
                 e.preventDefault();
-                $('#ModalAlerta').modal();
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'Debes seleccionar al menos un síntoma',
+                    icon: 'error',
+                    confirmButtonText: 'Ok, Entiendo'
+                });
             }else{
                 window.location.assign("formulario.php");
             }
