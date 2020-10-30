@@ -1,8 +1,10 @@
 <!-- TODO
 - Guardar datos en BD
-- Sintomas
+- Sintomas (A medias)
 - Arreglar especialistas
 - Guardar como PDF (Opcional)
+- Limpiar Base de Datos
+- Modal para validar cambios y cancelar cambios
 -->
 
 <?php
@@ -50,6 +52,55 @@
 <?php
         include("particiones/head.php");
 ?>
+<!-- Modal para Cancelar Accion -->
+<div class="modal animate__animated animate__jackInTheBox" id="myModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><strong>Confirmar</strong></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>¿Esta Seguro de Eliminar esta Inquietud?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <form action="inquietudes.php" method="POST">
+                    <input type="hidden" name="eliminar" id="deletee">
+                    <button type="submit" class="btn btn-danger">Si, Estoy seguro</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para Validar Accion -->
+<div class="modal animate__animated animate__jackInTheBox" id="myModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><strong>Confirmar</strong></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>¿Esta Seguro de Eliminar esta Inquietud?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <form action="inquietudes.php" method="POST">
+                    <input type="hidden" name="eliminar" id="deletee">
+                    <button type="submit" class="btn btn-danger">Si, Estoy seguro</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Editar -->
 <head>
     <link rel="stylesheet" href="public/css/edit.css">
 </head>

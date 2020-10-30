@@ -20,11 +20,16 @@
             echo '<div class="collapse navbar-collapse" id="navbarNavAltMarkup">';
             echo '<ul class="navbar-nav ml-auto">';
             echo '<li class="nav-item active">';
+            /* EDITAR */
             echo '<form action="./editar.php" method="POST">';
             echo '<input type="hidden" name="Documentos" value="'.$valores["ccusuario"].'">';
             echo '<input type="hidden" name="FechaVencimiento" value="'.$valores["fechaexpedicion"].'">';
-            echo '<button class="btn btn-danger text-white nav-link titulo" type="submit">Editar <i class="fas fa-pencil-alt"></i></button>';
+            echo '<button class="btn btn-primary text-white nav-link titulo" type="submit">Editar <i class="fas fa-pencil-alt"></i></button>';
             echo '</form>';
+            /* ELIMINAR */
+            echo "</li>";
+            echo '<li class="nav-item active">';
+            echo '<button class="btn btn-danger text-white nav-link titulo" type="submit">Eliminar <i class="fas fa-trash-alt"></i></i></button>';
             echo "</li>";
             echo "</ul>";
             echo "</div>";
