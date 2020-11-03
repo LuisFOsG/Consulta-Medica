@@ -25,7 +25,7 @@
             echo '</div>';
             echo '</br>';
         }else{
-            header("Location: inquietudes.php");
+            header("Location: ./inquietudes.php");
         }
     }
 
