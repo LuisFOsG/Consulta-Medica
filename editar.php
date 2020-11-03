@@ -50,8 +50,9 @@
     }
 ?>
 <?php
-        include("particiones/head.php");
+    include("particiones/head.php");
 ?>
+
 <!-- Modal para Cancelar Accion -->
 <div class="modal animate__animated animate__jackInTheBox" id="myModal" tabindex="-1">
     <div class="modal-dialog">
@@ -109,6 +110,10 @@
   <strong><a class="nav-link text-light titulo"><img src="./public/img/ico.png" width="50" alt="logo"> Editar Formulario</a></strong>
 </nav>
 
+<?php
+    include("dbconnection/verificationedit.php");
+?>
+
 <div class="row mt-5 mb-5">
     <div class="col-3">
     </div>
@@ -134,7 +139,7 @@
                     <div class="form-group">
                         <label class="col control-label parrafo">Documento de Identidad</label>
                         <div class="col">
-                            <input type="Number" min="0" name="Documentos" class="form-control redondear"
+                            <input type="Number" min="0" name="Doc" class="form-control redondear"
                                 placeholder="Ingrese su número de Identificación" <?php echo "value='$cedula'"; ?> readonly>
                             <div id="usuarioEncontrado"></div>
                         </div>
@@ -226,7 +231,7 @@
                     <div class="form-group">
                         <label class="col control-label parrafo">Fecha de Consulta</label>
                         <div class="col">
-                            <input name="FechaConsulta" name="Documentos" class="form-control redondear"
+                            <input name="FechaConsulta" class="form-control redondear"
                             <?php echo "value='$fechaconsul'"; ?> readonly>
                             <div id="usuarioEncontrado"></div>
                         </div>

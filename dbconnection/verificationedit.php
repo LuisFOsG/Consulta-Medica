@@ -2,58 +2,61 @@
     $con = conectar();
     /* sintomas*/
 
-    if(isset($_POST['Documentos'])){
-        $Nombres = $_POST['Nombres'];
-        echo $Nombres;
+    if(isset($_POST['Doc'])){
+        $nombre = $_POST['Nombres'];
+        echo $nombre;
         echo "<br>";
-        $Apellidos = $_POST['Apellidos'];
-        echo $Apellidos;
+        $apellidos = $_POST['Apellidos'];
+        echo $apellidos;
         echo "<br>";
-        $Documentos = $_POST['Documentos'];
-        echo $Documentos;
+        $cedula = $_POST['Doc'];
+        echo $cedula;
         echo "<br>";
-        $FechaNacimiento = $_POST['FechaNacimiento'];
-        echo $FechaNacimiento;
+        $fechanac = $_POST['FechaNacimiento'];
+        echo $fechanac;
         echo "<br>";
-        $FechaVencimiento = $_POST['FechaVencimiento'];
-        echo $FechaVencimiento;
+        $fecha = $_POST['FechaVencimiento'];
+        echo $fecha;
         echo "<br>";
-        $Direccion = $_POST['Direccion'];
-        echo $Direccion;
+        $date = $_POST['Direccion'];
+        echo $date;
         echo "<br>";
-        $Telefono = $_POST['Telefono'];
-        echo $Telefono;
+        $tel = $_POST['Telefono'];
+        echo $tel;
         echo "<br>";
-        $Correo = $_POST['Correo'];
-        echo $Correo;
+        $mail = $_POST['Correo'];
+        echo $mail;
         echo "<br>";
-        $Descripcion = $_POST['Descripcion'];
-        echo $Descripcion;
+        $details = $_POST['Descripcion'];
+        echo $details;
+        echo "<br>";
+        $fechaconsul = $_POST['FechaConsulta'];
+        echo $fechaconsul;
 
         if($_REQUEST['genero']=="Femenino"){
-            $Genero = 1;
+            $genero = 'Femenino';
         }
         if($_REQUEST['genero']=="Masculino"){
-            $Genero = 2;
+            $genero = 'Masculino';
         }
         if($_REQUEST['genero']=="Otro"){
-            $Genero = 3;
+            $genero = 'Otro';
         }
 
         if($_REQUEST['TipoConsulta']=="CInd"){
-            $tipoconsulta = 1;
+            $tipocons = 1;
         }
         if($_REQUEST['TipoConsulta']=="CDom"){
-            $tipoconsulta = 2;
+            $tipocons = 2;
         }
         if($_REQUEST['TipoConsulta']=="CDes"){
-            $tipoconsulta = 3;
+            $tipocons = 3;
         }
 
         echo "<br>";
-        echo $Genero;
+        echo $genero;
         echo "<br>";
-        echo $tipoconsulta;
+        echo $tipocons;
 
         $consulta = "SELECT * FROM tipoespecialista";
         $resultado = mysqli_query($con, $consulta) or die ( "Algo ha salido mal en la consulta a la base de datos");
@@ -80,12 +83,13 @@
 
         if($_FILES["Adjuntar"]["error"]>0){
             echo "Su Archivo Es Igual Al Anterior";
+            $archivo = $cedula . ".pdf";
         }else{
             $ruta = "public/documentos/";
-            $nombrefinal = $Documentos . ".pdf";
+            $archivo = $cedula . ".pdf";
             $upload = $ruta . $nombrefinal;
             move_uploaded_file($_FILES["Adjuntar"]["tmp_name"], $upload);
-            echo "El Nombre que tiene el archivo es: ". $nombrefinal;
+            echo "El Nombre que tiene el archivo es: ". $archivo;
         }
         echo "<br>";
         /* ==================================Sintomas ====================================== */
