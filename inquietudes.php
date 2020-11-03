@@ -36,7 +36,7 @@ include("dbconnection/conexion.php");//Conexión a la Base de Datos
                     echo '<td><strong>'.$valores["idinquietud"].'</strong></td>';
                     echo '<td>'.$valores["email"].'</td>';
                     echo '<td>'.$valores["descripcioni"].'</td>';
-                    echo '<td><input type="hidden" name="dato[]"><button class="borrarinq btn" data-toggle="modal" data-target="#myModal"><i class="far fa-trash-alt text-danger"></i></button></form></td>';
+                    echo '<td><input type="hidden" name="dato[]"><button class="borrarinq btn" data-toggle="modal" data-target="#myModal"><i class="far fa-trash-alt text-danger"></i></button></td>';
                     echo '</tr>';
                 }
             ?>

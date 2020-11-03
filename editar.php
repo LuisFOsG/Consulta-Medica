@@ -1,5 +1,5 @@
 <!-- TODO
-- Guardar datos en BD
+- Guardar datos en BD de edit
 - Sintomas (A medias)
 - Arreglar especialistas
 - Guardar como PDF (Opcional)

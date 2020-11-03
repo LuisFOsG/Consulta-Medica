@@ -15,6 +15,9 @@ include("dbconnection/conexion.php");//Conexión a la Base de Datos
         include("particiones/menu.php");
     ?>
     <div class="container mt-5 mb-5">
+        <?php
+            include("dbconnection/eliminar.php");
+        ?>
         <div class="card animate__animated animate__pulse animate__lightSpeedInLeft">
             <div class="card-header text-center">
                 <h3 class="titulo"><i class="fas fa-scroll"></i> Consultar Datos</h3>

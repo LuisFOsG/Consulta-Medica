@@ -15,12 +15,14 @@ include("dbconnection/conexion.php");//Conexión a la Base de Datos
         include("particiones/menu.php");
     ?>
     <div class="container">
+
         <?php
         include("dbconnection/verificationform.php");
         ?>
+
         <div class="row mt-3">
             <div class="col-12 col-lg-6 animate__animated animate__backInLeft">
-                <form action="formulario.php" method="POST" enctype="multipart/form-data">
+                <form id="formulario" action="formulario.php" method="POST" enctype="multipart/form-data">
                     <h3 class="titulo"><i class="fas fa-user"></i> Datos Personales:</h3>
                     <div class="form-group">
                         <label class="col control-label parrafo">Nombres</label>
@@ -241,9 +243,9 @@ include("dbconnection/conexion.php");//Conexión a la Base de Datos
             </div>
         </div>
     </div>
-    <script>
 
-        $('form').submit(function(e){
+    <script>
+        $('#formulario').submit(function(e){
             if ($('input[type=checkbox]:checked').length === 0) {
                 e.preventDefault();
                 Swal.fire({
@@ -256,8 +258,8 @@ include("dbconnection/conexion.php");//Conexión a la Base de Datos
                 window.location.assign("formulario.php");
             }
         });
-
     </script>
+
     <script src="dbconnection/useronready/main.js"></script>
     <script src="public/js/verificacion.js"></script>
     <?php

@@ -29,11 +29,34 @@
             /* ELIMINAR */
             echo "</li>";
             echo '<li class="nav-item active">';
-            echo '<button class="btn btn-danger text-white nav-link titulo" type="submit">Eliminar <i class="fas fa-trash-alt"></i></i></button>';
+            echo '<button class="btn btn-danger text-white nav-link titulo" data-toggle="modal" data-target="#myModal">Eliminar <i class="fas fa-trash-alt"></i></button>';
             echo "</li>";
             echo "</ul>";
             echo "</div>";
             echo '</nav>';
+
+            echo '<div class="modal animate__animated animate__jackInTheBox" id="myModal" tabindex="-1">';
+            echo '<div class="modal-dialog">';
+            echo '<div class="modal-content">';
+            echo '<div class="modal-header">';
+            echo '<h5 class="modal-title"><strong>Confirmar</strong></h5>';
+            echo '<button type="button" class="close" data-dismiss="modal" aria-label="Close">';
+            echo '<span aria-hidden="true">&times;</span>';
+            echo '</button>';
+            echo '</div>';
+            echo '<div class="modal-body">';
+            echo '<p>¿Esta Seguro de Eliminar su Consulta?</p>';
+            echo '</div>';
+            echo '<div class="modal-footer">';
+            echo '<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>';
+            echo '<form action="./basedatos.php" method="POST">';
+            echo '<input type="hidden" name="docEliminar" value="'.$valores["ccusuario"].'">';
+            echo '<button class="btn btn-danger text-white nav-link titulo" type="submit">Si, Estoy Seguro <i class="fas fa-trash-alt"></i></i></button>';
+            echo '</form>';
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
         }
     }
 
