@@ -81,27 +81,6 @@
     </div>
 </div>
 
-<!-- Modal para Validar Accion -->
-<div class="modal animate__animated animate__jackInTheBox" id="modalValidar" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title"><strong>Confirmar</strong></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p>¿Esta Seguro de Eliminar esta Inquietud?</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <a href="editar.php" class="btn btn-success">Si, Estoy seguro</a>
-            </div>
-        </div>
-    </div>
-</div>
-
 <!-- Editar -->
 <head>
     <link rel="stylesheet" href="public/css/edit.css">
@@ -270,7 +249,27 @@
                     <div class="form-group">
                         <label class="col control-label">&nbsp;</label>
                         <div class="col text-center">
-                            <button type="submit" class="btn btn-primary"><i class="fas fa-book"></i> Actualizar Consulta</button>
+                            <a data-toggle="modal" data-target="#modalValidar" class="btn btn-primary"><i class="fas fa-book"></i> Actualizar Consulta</a>
+                        </div>
+                    </div>
+                    <!-- Modal para Validar Accion -->
+                    <div class="modal animate__animated animate__jackInTheBox" id="modalValidar" tabindex="-1">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title"><strong>Confirmar</strong></h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Sus Datos se actualizaran, ¿Desea confirmar?</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                    <button type="submit" class="btn btn-success">Confirmar</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </form>
@@ -279,10 +278,4 @@
         </div>
     </div>
 </div>
-<script>
-    $('#formulario').submit(function(e){
-        e.preventDefault();
-        $('#modalValidar').modal();
-    });
-</script>
 <script src="public/js/verificacion.js"></script>
