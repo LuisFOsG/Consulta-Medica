@@ -196,17 +196,16 @@ include("dbconnection/conexion.php");//Conexión a la Base de Datos
                         <input type="file" name="Adjuntar" id="archivo" onchange="cambio()" accept=".pdf" required>
                     </div>
                     <p class="fuenteArchivo" id="nameArchivo">Adjuntar Documento de Identidad</p>
-
                     <!-- Boton -->
                     <div class="form-group">
-                        <label class="col control-label">&nbsp;</label>
-                        <div class="col">
+                        <label class="col control-label text-center">&nbsp;</label>
+                        <div class="col text-center">
                             <button type="submit" class="btn btn-primary"><i class="fas fa-book"></i> Enviar
                                 Formulario</button>
-                            <a href="index.php" class="btn btn-danger">Cancelar</a>
                         </div>
                     </div>
                 </form>
+                <button class="btn btn-danger" data-toggle="modal" data-target="#modalCancelar">Cancelar</button>
             </div>
             <!-- AQUI HAY OTRO FORMULARIO ===================================================================== -->
             <div class="col d-block animate__animated animate__backInRight">
@@ -249,6 +248,8 @@ include("dbconnection/conexion.php");//Conexión a la Base de Datos
             </div>
         </div>
     </div>
+    <br>
+    <br>
 
     <script>
         $('#formulario').submit(function(e){
@@ -272,5 +273,26 @@ include("dbconnection/conexion.php");//Conexión a la Base de Datos
         include("particiones/pie.php");
     ?>
 </body>
+
+<!-- Modal para Cancelar Accion -->
+<div class="modal animate__animated animate__jackInTheBox" id="modalCancelar" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><strong>Confirmar</strong></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>¿Esta Seguro de cancelar la edicion?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <a href="index.php" class="btn btn-danger">Si, Estoy seguro</a>
+            </div>
+        </div>
+    </div>
+</div>
 
 </html>

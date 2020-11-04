@@ -33,6 +33,7 @@
         $fechaconsul = $_POST['FechaConsulta'];
         echo $fechaconsul;
 
+
         if($_REQUEST['genero']=="Femenino"){
             $genero = 'Femenino';
         }
