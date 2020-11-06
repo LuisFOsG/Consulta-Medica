@@ -1,19 +1,3 @@
-<!-- TODO
-
-- Guardar datos en BD de edit
-- Limpiar Base de Datos
-- Cambiar otro por Prefiero No Decirlo
---------------------
-- Nombres
-- Apellidos
-- Genero
-- Fecha expe
-- Fecha Nac
-- Direccion
-- Telefono
-- Correo
--->
-
 <?php
     include("dbconnection/conexion.php");
     /* include("dbconnection/verificationedit.php"); */

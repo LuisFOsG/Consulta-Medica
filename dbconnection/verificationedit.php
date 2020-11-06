@@ -146,9 +146,9 @@
         $consulta = "UPDATE usuario SET nombres = '$nombre', apellidos = '$apellidos' , genero = '$gen' , fechaexpedicion = '$fecha', fechanacimiento = '$fechanac' , direccion = '$date' , telefono = '$tel' , correo = '$mail' , Ccespe = '$Ccespe' WHERE ccusuario = '$cedula'";
         $resultado = mysqli_query($con, $consulta) or die ( "Algo ha salido mal al actualizar la Tabla de Consulta");
 
-        echo '<div class="alert alert-primary" role="alert">';
-        echo '<strong>Sus datos se han actualizado de forma satisfactoria</strong>';
-        echo '<a class="btn btn-success" href="index.php">Volver a Inicio</a>';
+        echo '<div class="alert alert-primary text-center" role="alert">';
+        echo '<strong>Sus datos se han actualizado de forma satisfactoria</strong><br><br>';
+        echo '<a class="btn btn-dark" href="index.php">Volver a Inicio</a>';
         echo '</div>';
     }
 ?>
