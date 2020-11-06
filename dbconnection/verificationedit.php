@@ -129,12 +129,26 @@
             $details = $detailss;
         }
 
-        echo $Ccespe;
+        if($genero=="Femenino"){
+            $gen = 1;
+        }
+        if($genero=="Masculino"){
+            $gen = 2;
+        }
+        if($genero=="Otro"){
+            $gen = 3;
+        }
+
 
         $consulta = "UPDATE datosconsultas SET descripcion = '$details' , tipoconsulta = '$tipocons' WHERE idconsultas = '$idConsulta' ";
         $resultado = mysqli_query($con, $consulta) or die ( "Algo ha salido mal al actualizar la Tabla de Consulta");
 
-        $consulta = "UPDATE `usuario` SET `ccusuario`=[value-1],`nombres`=[value-2],`apellidos`=[value-3],`genero`=[value-4],`fechaexpedicion`=[value-5],`fechanacimiento`=[value-6],`direccion`=[value-7],`telefono`=[value-8],`correo`=[value-9],`adjuntar`=[value-10],`Idconsultas`=[value-11],`Ccespe`=[value-12] WHERE 1";
+        $consulta = "UPDATE usuario SET nombres = '$nombre', apellidos = '$apellidos' , genero = '$gen' , fechaexpedicion = '$fecha', fechanacimiento = '$fechanac' , direccion = '$date' , telefono = '$tel' , correo = '$mail' , Ccespe = '$Ccespe' WHERE ccusuario = '$cedula'";
         $resultado = mysqli_query($con, $consulta) or die ( "Algo ha salido mal al actualizar la Tabla de Consulta");
+
+        echo '<div class="alert alert-primary" role="alert">';
+        echo '<strong>Sus datos se han actualizado de forma satisfactoria</strong>';
+        echo '<a class="btn btn-success" href="index.php">Volver a Inicio</a>';
+        echo '</div>';
     }
 ?>
