@@ -4,35 +4,15 @@
 
     if(isset($_POST['Doc'])){
         $nombre = $_POST['Nombres'];
-        echo $nombre;
-        echo "<br>";
         $apellidos = $_POST['Apellidos'];
-        echo $apellidos;
-        echo "<br>";
         $cedula = $_POST['Doc'];
-        echo $cedula;
-        echo "<br>";
         $fechanac = $_POST['FechaNacimiento'];
-        echo $fechanac;
-        echo "<br>";
         $fecha = $_POST['FechaVencimiento'];
-        echo $fecha;
-        echo "<br>";
         $date = $_POST['Direccion'];
-        echo $date;
-        echo "<br>";
         $tel = $_POST['Telefono'];
-        echo $tel;
-        echo "<br>";
         $mail = $_POST['Correo'];
-        echo $mail;
-        echo "<br>";
         $details = $_POST['Descripcion'];
-        echo $details;
-        echo "<br>";
         $fechaconsul = $_POST['FechaConsulta'];
-        echo $fechaconsul;
-
 
         if($_REQUEST['genero']=="Femenino"){
             $genero = 'Femenino';
@@ -54,11 +34,6 @@
             $tipocons = 3;
         }
 
-        echo "<br>";
-        echo $genero;
-        echo "<br>";
-        echo $tipocons;
-
         $consulta = "SELECT * FROM tipoespecialista";
         $resultado = mysqli_query($con, $consulta) or die ( "Algo ha salido mal en la consulta a la base de datos");
         while ($valores = mysqli_fetch_array($resultado)) {
@@ -78,22 +53,17 @@
                 }
             }
         }
-        echo "<br>";
-        echo $especialista;
-        echo "<br>";
 
         if($_FILES["Adjuntar"]["error"]>0){
-            echo "Su Archivo Es Igual Al Anterior";
             $archivo = $cedula . ".pdf";
         }else{
             $ruta = "public/documentos/";
             $archivo = $cedula . ".pdf";
             $upload = $ruta . $nombrefinal;
             move_uploaded_file($_FILES["Adjuntar"]["tmp_name"], $upload);
-            echo "El Nombre que tiene el archivo es: ". $archivo;
         }
-        echo "<br>";
         /* ==================================Sintomas ====================================== */
+
         if(isset($_REQUEST["sintoma"])){
             $arreglo = $_REQUEST["sintoma"];
 
@@ -103,11 +73,49 @@
                     echo $arreglo[$n];
                     echo "<br>";
                 }
-            } else{
-                echo "No ingreso ningun dato";
             }
-        } else {
-            echo "No Ingreso Ningun sintoma";
         }
+    }
+
+    $consulta = "SELECT usuario.nombres, usuario.apellidos, usuario.fechaexpedicion, usuario.fechanacimiento, usuario.direccion, usuario.telefono, usuario.correo, datosconsultas.descripcion
+    FROM usuario
+    inner join datosconsultas on datosconsultas.idconsultas = usuario.Idconsultas
+    WHERE ccusuario = '$cedula'";
+
+    $resultado = mysqli_query($con, $consulta) or die ( "Algo ha salido mal en la consulta a la base de datos");
+    while ($valores = mysqli_fetch_array($resultado)) {
+        $nombree = $valores["nombres"];
+        $apellidoss = $valores["apellidos"];
+        $fechaa = $valores["fechaexpedicion"];
+        $fechanacc = $valores["fechanacimiento"];
+        $datee = $valores["direccion"];
+        $tell = $valores["telefono"];
+        $maill = $valores["correo"];
+        $detailss = $valores["descripcion"];
+    }
+
+    if($nombre==""){
+        $nombre = $nombree;
+    }
+    if($apellidos==""){
+        $apellidos = $apellidoss;
+    }
+    if($fecha==""){
+        $fecha = $fechaa;
+    }
+    if($fechanac==""){
+        $fechanac = $fechanacc;
+    }
+    if($date==""){
+        $date = $datee;
+    }
+    if($tel==""){
+        $tel = $tell;
+    }
+    if($mail==""){
+        $mail = $maill;
+    }
+    if($details==""){
+        $details = $detailss;
     }
 ?>

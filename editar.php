@@ -1,10 +1,9 @@
 <!-- TODO
+
 - Guardar datos en BD de edit
-- Sintomas (A medias)
-- Arreglar especialistas
-- Guardar como PDF (Opcional)
 - Limpiar Base de Datos
-- Modal para validar cambios y cancelar cambios
+- Cambiar otro por Prefiero No Decirlo
+
 -->
 
 <?php
@@ -137,21 +136,21 @@
                             <div class="col">
                                 <div class="form-group form-control redondear">
                                     <input type="radio" name="genero" id="femenino" value="Femenino"
-                                    <?php if($genero=="Femenino"){echo "checked";} ?> >
+                                    <?php if($genero=="Femenino"){echo "checked";} ?> required>
                                     <label for="femenino"> Femenino</label>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-group form-control redondear">
                                     <input type="radio" name="genero" id="masculino" value="Masculino"
-                                    <?php if($genero=="Masculino"){echo "checked";} ?> >
+                                    <?php if($genero=="Masculino"){echo "checked";} ?> required>
                                     <label for="masculino"> Masculino</label>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-group form-control redondear">
                                     <input type="radio" name="genero" id="otro" value="Otro"
-                                    <?php if($genero=="Otro"){echo "checked";} ?> >
+                                    <?php if($genero=="Otro"){echo "checked";} ?> required>
                                     <label for="otro"> Otro</label>
                                 </div>
                             </div>
@@ -273,7 +272,11 @@
                         </div>
                     </div>
                 </form>
-                <button class="btn btn-danger" data-toggle="modal" data-target="#myModal">Cancelar</button>
+                <div class="row">
+                    <div class="col text-center">
+                        <button class="btn btn-danger" data-toggle="modal" data-target="#myModal">Cancelar</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

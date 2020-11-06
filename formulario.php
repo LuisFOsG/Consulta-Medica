@@ -205,7 +205,11 @@ include("dbconnection/conexion.php");//Conexión a la Base de Datos
                         </div>
                     </div>
                 </form>
-                <button class="btn btn-danger" data-toggle="modal" data-target="#modalCancelar">Cancelar</button>
+                <div class="row">
+                    <div class="col text-center">
+                        <button class="btn btn-danger" data-toggle="modal" data-target="#modalCancelar">Cancelar</button>
+                    </div>
+                </div>
             </div>
             <!-- AQUI HAY OTRO FORMULARIO ===================================================================== -->
             <div class="col d-block animate__animated animate__backInRight">
