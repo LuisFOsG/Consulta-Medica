@@ -211,6 +211,7 @@ include("dbconnection/conexion.php");//Conexión a la Base de Datos
                     </div>
                 </div>
             </div>
+            <br>
             <!-- AQUI HAY OTRO FORMULARIO ===================================================================== -->
             <div class="col d-block animate__animated animate__backInRight">
 
@@ -252,7 +253,6 @@ include("dbconnection/conexion.php");//Conexión a la Base de Datos
             </div>
         </div>
     </div>
-    <br>
     <br>
 
     <script>
