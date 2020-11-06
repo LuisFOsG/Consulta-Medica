@@ -14,6 +14,24 @@
         $details = $_POST['Descripcion'];
         $fechaconsul = $_POST['FechaConsulta'];
 
+        $consulta = "SELECT usuario.nombres, usuario.apellidos, usuario.fechaexpedicion, usuario.fechanacimiento, usuario.direccion, usuario.telefono, usuario.correo, datosconsultas.descripcion, datosconsultas.idconsultas
+        FROM usuario
+        inner join datosconsultas on datosconsultas.idconsultas = usuario.Idconsultas
+        WHERE ccusuario = '$cedula'";
+
+        $resultado = mysqli_query($con, $consulta) or die ( "Algo ha salido mal en la consulta a la base de datos");
+        while ($valores = mysqli_fetch_array($resultado)) {
+            $nombree = $valores["nombres"];
+            $apellidoss = $valores["apellidos"];
+            $fechaa = $valores["fechaexpedicion"];
+            $fechanacc = $valores["fechanacimiento"];
+            $datee = $valores["direccion"];
+            $tell = $valores["telefono"];
+            $maill = $valores["correo"];
+            $detailss = $valores["descripcion"];
+            $idConsulta = $valores["idconsultas"];
+        }
+
         if($_REQUEST['genero']=="Femenino"){
             $genero = 'Femenino';
         }
@@ -59,63 +77,64 @@
         }else{
             $ruta = "public/documentos/";
             $archivo = $cedula . ".pdf";
-            $upload = $ruta . $nombrefinal;
+            $upload = $ruta . $archivo;
             move_uploaded_file($_FILES["Adjuntar"]["tmp_name"], $upload);
         }
         /* ==================================Sintomas ====================================== */
 
         if(isset($_REQUEST["sintoma"])){
-            $arreglo = $_REQUEST["sintoma"];
+            $consulta = "DELETE FROM datosconsulta_sintomas WHERE Idconsultas = '$idConsulta'";
+            $resultado = mysqli_query($con, $consulta) or die ( "Algo ha salido mal al Eliminar Sintomas");
 
+            $arreglo = $_REQUEST["sintoma"];
             if($arreglo){
                 $num = count($arreglo);
                 for($n=0; $n<$num; $n++){
-                    echo $arreglo[$n];
-                    echo "<br>";
+                    $consulta2 = "SELECT * FROM sintomas";
+                    $resultado2 = mysqli_query($con, $consulta2) or die ( "Algo ha salido mal en la consulta a la base de datos de sintomas");
+
+                    while ($valores2 = mysqli_fetch_array($resultado2)) {
+                        if ($arreglo[$n] === $valores2["nombresintoma"]){
+                            $idSintoma = $valores2["idsintomas"];
+                            $consulta = "INSERT INTO datosconsulta_sintomas(Idconsultas, IdSintomas) VALUES ('$idConsulta','$idSintoma')";
+                            $resultado = mysqli_query($con, $consulta) or die ( "Algo ha salido mal en la consulta a la base de datos datosconsulta_sintomas");
+                        }
+                    }
                 }
             }
         }
-    }
 
-    $consulta = "SELECT usuario.nombres, usuario.apellidos, usuario.fechaexpedicion, usuario.fechanacimiento, usuario.direccion, usuario.telefono, usuario.correo, datosconsultas.descripcion
-    FROM usuario
-    inner join datosconsultas on datosconsultas.idconsultas = usuario.Idconsultas
-    WHERE ccusuario = '$cedula'";
+        if($nombre==""){
+            $nombre = $nombree;
+        }
+        if($apellidos==""){
+            $apellidos = $apellidoss;
+        }
+        if($fecha==""){
+            $fecha = $fechaa;
+        }
+        if($fechanac==""){
+            $fechanac = $fechanacc;
+        }
+        if($date==""){
+            $date = $datee;
+        }
+        if($tel==""){
+            $tel = $tell;
+        }
+        if($mail==""){
+            $mail = $maill;
+        }
+        if($details==""){
+            $details = $detailss;
+        }
 
-    $resultado = mysqli_query($con, $consulta) or die ( "Algo ha salido mal en la consulta a la base de datos");
-    while ($valores = mysqli_fetch_array($resultado)) {
-        $nombree = $valores["nombres"];
-        $apellidoss = $valores["apellidos"];
-        $fechaa = $valores["fechaexpedicion"];
-        $fechanacc = $valores["fechanacimiento"];
-        $datee = $valores["direccion"];
-        $tell = $valores["telefono"];
-        $maill = $valores["correo"];
-        $detailss = $valores["descripcion"];
-    }
+        echo $Ccespe;
 
-    if($nombre==""){
-        $nombre = $nombree;
-    }
-    if($apellidos==""){
-        $apellidos = $apellidoss;
-    }
-    if($fecha==""){
-        $fecha = $fechaa;
-    }
-    if($fechanac==""){
-        $fechanac = $fechanacc;
-    }
-    if($date==""){
-        $date = $datee;
-    }
-    if($tel==""){
-        $tel = $tell;
-    }
-    if($mail==""){
-        $mail = $maill;
-    }
-    if($details==""){
-        $details = $detailss;
+        $consulta = "UPDATE datosconsultas SET descripcion = '$details' , tipoconsulta = '$tipocons' WHERE idconsultas = '$idConsulta' ";
+        $resultado = mysqli_query($con, $consulta) or die ( "Algo ha salido mal al actualizar la Tabla de Consulta");
+
+        $consulta = "UPDATE `usuario` SET `ccusuario`=[value-1],`nombres`=[value-2],`apellidos`=[value-3],`genero`=[value-4],`fechaexpedicion`=[value-5],`fechanacimiento`=[value-6],`direccion`=[value-7],`telefono`=[value-8],`correo`=[value-9],`adjuntar`=[value-10],`Idconsultas`=[value-11],`Ccespe`=[value-12] WHERE 1";
+        $resultado = mysqli_query($con, $consulta) or die ( "Algo ha salido mal al actualizar la Tabla de Consulta");
     }
 ?>
