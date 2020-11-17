@@ -138,29 +138,10 @@ include("dbconnection/conexion.php");//Conexión a la Base de Datos
                         <select name="FechaConsulta" class="col form-control redondear" required>
                             <?php
                                 date_default_timezone_set("America/Bogota");
-                                $dia = date("d");
-                                $mes = date("m");
-                                $anio = date("Y");
-                                $dia +=1;
-                                if($dia<10){
-                                    $fechaManana = $anio . "-" . $mes . "-0" . $dia;
-                                }else{
-                                    $fechaManana = $anio . "-" . $mes . "-" . $dia;
-                                }
-
-                                $dia +=1;
-                                if($dia<10){
-                                    $fechaPasMan = $anio . "-" . $mes . "-0" . $dia;
-                                }else{
-                                    $fechaPasMan = $anio . "-" . $mes . "-" . $dia;
-                                }
-
-                                $dia +=1;
-                                if($dia<10){
-                                    $fechaPasPasMan = $anio . "-" . $mes . "-0" . $dia;
-                                }else{
-                                    $fechaPasPasMan = $anio . "-" . $mes . "-" . $dia;
-                                }
+                                $fecha = date("d-m-Y");
+                                $fechaManana = date("d-m-Y",strtotime($fecha."+ 1 days"));
+                                $fechaPasMan = date("d-m-Y",strtotime($fecha."+ 2 days"));
+                                $fechaPasPasMan = date("d-m-Y",strtotime($fecha."+ 3 days"));
 
                                 echo '<option name="FechaConsulta" value="1">'.$fechaManana.'</option>';
                                 echo '<option name="FechaConsulta" value="2">'.$fechaPasMan.'</option>';
