@@ -112,10 +112,10 @@
             }
 
             date_default_timezone_set("America/Bogota");
-            $fecha = date("d-m-Y");
-            $fechaManana = date("d-m-Y",strtotime($fecha."+ 1 days"));
-            $fechaPasMan = date("d-m-Y",strtotime($fecha."+ 2 days"));
-            $fechaPasPasMan = date("d-m-Y",strtotime($fecha."+ 3 days"));
+            $fecha = date("Y-m-d");
+            $fechaManana = date("Y-m-d",strtotime($fecha."+ 1 days"));
+            $fechaPasMan = date("Y-m-d",strtotime($fecha."+ 2 days"));
+            $fechaPasPasMan = date("Y-m-d",strtotime($fecha."+ 3 days"));
 
             if($_REQUEST['FechaConsulta']=="1"){
                 $fechaconsulta = $fechaManana;

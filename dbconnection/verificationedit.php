@@ -13,6 +13,7 @@
         $mail = $_POST['Correo'];
         $details = $_POST['Descripcion'];
         $fechaconsul = $_POST['FechaConsulta'];
+        $tipoespe = $_REQUEST['Especialistas'];
 
         $consulta = "SELECT usuario.nombres, usuario.apellidos, usuario.fechaexpedicion, usuario.fechanacimiento, usuario.direccion, usuario.telefono, usuario.correo, datosconsultas.descripcion, datosconsultas.idconsultas
         FROM usuario

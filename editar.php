@@ -1,6 +1,5 @@
 <?php
     include("dbconnection/conexion.php");
-    /* include("dbconnection/verificationedit.php"); */
 ?>
 
 <?php
@@ -37,6 +36,13 @@
             $tipocons = $valores["tipoconsulta"];
             $tipoespe = $valores["idtipo"];
             $fechaconsul = $valores["fechaconsulta"];
+        }
+        $consulta = "SELECT * FROM tipoespecialista";
+        $resultado = mysqli_query($con, $consulta) or die ( "Algo ha salido mal en la consulta a la base de datos");
+        while ($valores = mysqli_fetch_array($resultado)) {
+            if($valores["idtipo"]==$tipoespe){
+                $tipoespe = $valores["nombretipoesp"];
+            }
         }
     }
 ?>
@@ -194,7 +200,8 @@
                                 $consulta = "SELECT * FROM tipoespecialista";
                                 $resultado = mysqli_query($con, $consulta) or die ( "Algo ha salido mal en la consulta a la base de datos");
                                 while ($valores = mysqli_fetch_array($resultado)) {
-                                    echo '<option name="Especialistas" value="'.$valores["nombretipoesp"].'">'.$valores["nombretipoesp"].'</option>';
+                                    if($valores["nombretipoesp"]==$tipoespe){$select = "selected";}else{$select = "";}
+                                    echo '<option name="Especialistas" value="'.$valores["nombretipoesp"].'" '.$select.'>'.$valores["nombretipoesp"].'</option>';
                                 }
                             ?>
                         </select>
